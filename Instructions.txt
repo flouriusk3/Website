@@ -1,0 +1,2 @@
+To run the iOS Learning Club website, extract the files.
+Then, click on the html file called IOSLC.

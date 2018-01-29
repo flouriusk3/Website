@@ -1,0 +1,199 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOS Learning Club</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="css/S_style.css" type="text/css">
+  </head>
+  <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <!--<div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">iOS Learning Club</li>
+        </ul>
+      </div>-->
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="IOSLC.html">Home Page</a></li>
+          <li><a href="Applications.html">Applications</a></li>
+          <li><a href="About.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+
+    <!-- Banner image -->
+    <div class="banner"> 
+        <div class="content">
+        <h1>iOS Learning Club.<br></h1>
+        <h2>Swift Programming for Beginners.</h2>
+        <a class="button" href="Applications.html">Learn Now</a>
+        </div>  
+    </div>
+
+    <!-- Blog posts-->
+    <div class="row" id="content">
+      <div class="medium-8 columns">
+      
+         <!-- Blog posts - iOS Programming-->
+        <div class="blog-post">
+        <h3>iPhone Calculator</h3>
+        <p>This application is an elementary calculator. It is designed to add, subtract, multiply, and divide two numbers.</p>
+        <img src="img/Calculator.png" alt="Calculator">
+        </div>
+
+         <!-- Blog posts - About Swift-->
+        <div class="blog-post">
+          <h3>Instructions</h3>
+         <p>
+           <ol>
+            <li>Open Xcode and create a new project. Name the application Calculator and make sure you’re using the swift language.
+            </li>
+            <li>Go to main.storyboard. Watch the video listed in resources to learn how to complete the user interface on this application.Your main.storyboard should look like the picture above.</li>
+            <li>Go to the ViewController.swift file to add your variables. 
+              <ul>
+                <li>var numberOnScreen:Double = 0;</li>
+                <li>var previousNumber:Double = 0;</li>
+                <li>var performingMath = false</li>
+                <li>var operation = 0;</li>
+                <li>@IBOutlet weak var label: UILabel!</li>
+              </ul>
+            </li>
+            <li>Add your functions.  
+                <p>
+                 @IBAction func numbers(_ sender: UIButton)<br>
+                    {<br>
+                        if performingMath == true<br>
+                        {<br>
+                            label.text = String(sender.tag-1)<br>
+                            numberOnScreen = Double(label.text!)!<br>
+                            performingMath = false<br>
+                        }<br>
+                        else<br>
+                        {<br>
+                            label.text = label.text! + String(sender.tag-1)<br>
+                            numberOnScreen = Double(label.text!)!<br>
+                        }<br>
+                    }<br>
+                    
+                    @IBAction func buttons(_ sender: UIButton)<br>
+                    {<br>
+                        if label.text != "" && sender.tag != 11 && sender.tag != 16<br>
+                        {<br>
+                            previousNumber = Double(label.text!)!<br>
+                            
+                            if sender.tag == 12 //Divide<br>
+                            {<br>
+                                label.text = "/";<br>
+                            }<br>
+                            else if sender.tag == 13 //Multiply<br>
+                            {<br>
+                                label.text = "x";<br>
+                            }<br>
+                            else if sender.tag == 14 //Minus<br>
+                            {<br>
+                                label.text = "-";<br>
+                            }<br>
+                            else if sender.tag == 15 //Plus<br>
+                            {<br>
+                                label.text = "+";<br>
+                            }<br>
+                            
+                            operation = sender.tag<br>
+                            performingMath = true;<br>
+                        }<br>
+                        else if sender.tag == 16<br>
+                        {<br>
+                            if operation == 12<br>
+                            {<br>
+                                label.text = String(previousNumber / numberOnScreen)<br>
+                            }<br>
+                            else if operation == 13<br>
+                            {<br>
+                                label.text = String(previousNumber * numberOnScreen)<br>
+                            }<br>
+                            else if operation == 14<br>
+                            {<br>
+                                label.text = String(previousNumber - numberOnScreen)<br>
+                            }<br>
+                            else if operation == 15<br>
+                            {<br>
+                                label.text = String(previousNumber + numberOnScreen)<br>
+                            }<br>
+                        }<br>
+                        else if sender.tag == 11<br>
+                        {<br>
+                            label.text = ""<br>
+                            previousNumber = 0;<br>
+                            numberOnScreen = 0;<br>
+                            operation = 0;<br>
+                        }<br>
+                    }<br>
+                    
+
+                    override func viewDidLoad() {<br>
+                        super.viewDidLoad()<br>
+                        // Do any additional setup after loading the view, typically from a nib.<br>
+                    }<br>
+
+                    override func didReceiveMemoryWarning() {<br>
+                        super.didReceiveMemoryWarning()<br>
+                        // Dispose of any resources that can be recreated.<br>
+                    }<br>
+
+                </p>
+            </li>
+            <li>Make the connection to your function. For the Fahrenheit text field, open the connection inspector. Control-drag from the small circle next to Editing Changed to the text field. Select fahrenheitFieldEditingChanged.</li>
+            <li>Build and run your application. Enter a Fahrenheit temperature and the application will convert it to Celsius temperature. You’re all done.</li>
+          </ol>
+         </p>
+        </div>
+
+         <!-- Blog posts - About Xcode-->
+        <div class="blog-post">
+         <h3>Resources</h3>
+         <p>
+          Here is the video we used to complete this application. <br>
+          <a href="https://www.youtube.com/watch?v=AG2QDwmj64A">Part 1</a>
+          <a href="https://www.youtube.com/watch?v=5tpQEsJ0iVg">Part 2</a>
+          </p>
+        </div>
+
+
+       <!-- Side Bar Apps -->
+      </div>
+      <div class="medium-3 columns" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+          <h4>Applications</h4>
+          <ul>
+            <li><a href="Calculator.html">iPhone Calculator</a></li>
+            <li><a href="Coin.html">Coin Converter</a></li>
+            <li><a href="Temperature.html">Temperature Converter</a></li>
+          </ul>
+
+           <!-- Side Bar authors -->
+          <h4>Authors</h4>
+          <ul>
+            <li><a href="Aisha.html">Aisha Ayaz</a></li>
+            <li><a href="Bryan.html">Bryan Campos</a></li>
+            <li><a href="Kiyunna.html">Kiyunna Flourius</a></li>
+             <li><a href="Bobby.html">Bobby Maiga</a></li>
+            <li><a href="Brooke.html">Brooke Sextion</a></li>
+          </ul>
+        </div>
+      </div>
+   </div>
+
+     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>

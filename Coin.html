@@ -1,0 +1,144 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOS Learning Club</title>
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="css/S_style.css" type="text/css">
+  </head>
+  <body>
+
+    <!-- Start Top Bar -->
+    <div class="top-bar">
+      <!--<div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">iOS Learning Club</li>
+        </ul>
+      </div>-->
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="IOSLC.html">Home Page</a></li>
+          <li><a href="Applications.html">Applications</a></li>
+          <li><a href="About.html">About Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- End Top Bar -->
+
+
+    <!-- Banner image -->
+    <div class="banner"> 
+        <div class="content">
+        <h1>iOS Learning Club.<br></h1>
+        <h2>Swift Programming for Beginners.</h2>
+        <a class="button" href="Applications.html">Learn Now</a>
+        </div>  
+    </div>
+
+    <!-- Blog posts-->
+    <div class="row" id="content">
+      <div class="medium-8 columns">
+      
+         <!-- Blog posts - iOS Programming-->
+        <div class="blog-post">
+        <h3>Coin Converter</h3>
+        <p>This application is a coin converter. The user enters any number of quarters, dimes, nickels, and pennies. The application will convert the number of coins to a dollar amount.</p>
+        <img src="img/MonetaryConverter1.png" alt="Coin Converter">
+        <img src="img/MonetaryConverter2.png" alt="Coin Converter">
+        </div>
+
+         <!-- Blog posts - About Swift-->
+        <div class="blog-post">
+          <h3>Instructions</h3>
+         <p>
+          <ol>
+            <li>Open Xcode and create a new project. Name the application 
+            CoinConverter and make sure you’re using the swift language.</li>
+            <li>Go to main.storyboard. In the bottom right corner, go to the object library. Add five labels, four text fields, and one button onto the view.</li>
+            <li>From top to bottom, rename the five labels as stated below. 
+              <ul>
+                <li>Quarters:</li>
+                <li>Dimes:</li>
+                <li>Nickels:</li>
+                <li>Pennies:</li>
+                <li>Total: (resize if needed)</li>
+              </ul>
+            </li>
+            <li>Rename the button “Calculate”.</li>
+            <li>Your main.storyboard should look like the picture above.</li>
+            <li>Go to the ViewController.swift file to add your variables.
+              <ul>
+                <li>@IBOutlet weak var quarterText: UITextField!</li>
+                <li>@IBOutlet weak var dimesText: UITextField!</li>
+                <li>@IBOutlet weak var nickelsText: UITextField!</li>
+                <li>@IBOutlet weak var penniesText: UITextField!</li>
+                <li>@IBOutlet weak var totalLabel: UILabel!</li>
+              </ul>
+            </li>
+            <li>Make the connections from your text fields/label by going to the connection inspector. Then control-drag from the small circle next to referencing outlets to the text field. Designate the appropriate outlet for the text field. Repeat for each text field and total label. </li>
+            <li>Add an action function. This function will take the user input and convert the amount of coins to dollars. 
+                <p>
+                  @IBAction func Calculate(_sender: Any) {<br>
+                  // Convert user input from string to double<br>
+                  Let quarters = Double(quarterText.text!)<br>
+                  Let dimes = Double(dimesText.text!)<br>
+                  Let nickels = Double(nickelsText.text!)<br>
+                  Let pennies = Double(penniesText.text!)<br>
+
+                  // If all text fields have user input, calculate the dollar amount<br>
+                  If quarters != nil && dimes != nil && nickels != nil && pennies != nil {<br>
+                  Let total = Double(quarters! * 0.25 + dimes! * 0.10 + nickels! * 0.05 + pennies * 0.01)<br>
+                  totalLabel.text = “Your total is: $\(total).”<br>
+                  }<br>
+                  }<br>
+                </p>
+            </li>
+            <li>Make the connection from your button to the calculate function. Control-drag from the button to the view controller. Then, select Calculate. Now, when you press the calculate button, the function will execute.</li>
+            <li>Build and run your application. Enter numbers for all text fields and press calculate. Your total should display in the total label. You’re all done.</li>
+          </ol>
+         </p>
+        </div>
+
+         <!-- Blog posts - About Xcode-->
+        <div class="blog-post">
+         <h3>Resources</h3>
+         <p>
+            Adding two numbers: <a href="https://www.youtube.com/watch?v=bkjYqy-Inro">Video</a> <br>
+            Working with text fields: <a href="https://www.youtube.com/watch?v=0PBIf4JKv_E">Video</a>
+          </p>
+        </div>
+
+
+       <!-- Side Bar Apps -->
+      </div>
+      <div class="medium-3 columns" data-sticky-container>
+        <div class="sticky" data-sticky data-anchor="content">
+          <h4>Applications</h4>
+          <ul>
+           <li><a href="Calculator.html">iPhone Calculator</a></li>
+            <li><a href="Coin.html">Coin Converter</a></li>
+            <li><a href="Temperature.html">Temperature Converter</a></li>
+          </ul>
+
+           <!-- Side Bar authors -->
+          <h4>Authors</h4>
+          <ul>
+            <li><a href="Aisha.html">Aisha Ayaz</a></li>
+            <li><a href="Bryan.html">Bryan Campos</a></li>
+            <li><a href="Kiyunna.html">Kiyunna Flourius</a></li>
+             <li><a href="Bobby.html">Bobby Maiga</a></li>
+            <li><a href="Brooke.html">Brooke Sextion</a></li>
+          </ul>
+        </div>
+      </div>
+   </div>
+
+     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
